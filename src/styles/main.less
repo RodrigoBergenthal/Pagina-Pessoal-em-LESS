@@ -1,84 +1,110 @@
-
 @import "mapas.less";
 @breakpointMobile: ~"(max-width: 767px)";
-@breakpointTablet:~" (min-width: 768px) and (max-width: 1023px)";
+@breakpointTablet: ~"(min-width: 768px) and (max-width: 1023px)";
 
-.marginbotton8 {
-    margin-bottom: 8px;
+.marginbottom8() {
+  margin-bottom: 8px;
 }
 
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-      font-family: "Roboto", sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
-
 
 body {
-background-color:#colors [backgroundColor];
-color: #colors [textColor];
+  background-color: #colors[backgroundColor];
+  color: #colors[textColor];
 }
 
 .container {
-    max-width: 960px;
-    width: 100%;
-    margin: 0 auto;
-    
-    
-    @media @breakpointMobile {
-        max-width: 70%;
-        background-color: red;
-    }
-    
-    @media @breakpointTablet {
-        max-width: 80%;
-        background-color: yellow;
-    }
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media @breakpointMobile {
+    max-width: 70%;
+    background-color: rgb(54, 20, 204);
+  }
+
+  @media @breakpointTablet {
+    max-width: 80%;
+    background-color: yellow;
+  }
+}
+
+li {
+  list-style: none;
 }
 
 header {
-    padding: 24px;
+  padding-bottom: 24px;
 
-    .profile-avatar {
-        display: block;
-        margin: 0 auto 24px;
-        border-radius: 100px;
-    }
+  .profile-avatar {
+    display: block;
+    margin: 0 auto 24px;
+    border-radius: 100px;
+  }
 }
+
 .profile-bio {
-    text-align: center;
-    &-name {
-        font-size: 10px;
-        .marginbotton8()
-    }
+  text-align: center;
+  &-name {
+    font-size: 10px;
+    .marginbottom8();
+  }
 
-    &-subtitle {
-        font-size: 14px;
-        .marginbotton8()
-    }
+  &-subtitle {
+    font-size: 14px;
+    .marginbottom8();
+  }
 
-    &-description {
-        font-size: 14px;
-        opacity: 70%;
-    }
+  &-description {
+    font-size: 14px;
+    opacity: 70%;
+  }
 }
 
 .social-links {
-    display: flex;
-    justify-content: space-between;
-    max-width: 240px;
-    width: 100%;
-    margin: 0 auto;
-    li {
-        list-style: none;
+  display: flex;
+  justify-content: space-between;
+  max-width: 240px;
+  width: 100%;
+  margin: 0 auto;
 
-        img {
-            transition: all ease .3s;
-            &:hover {
-                transform: scale(1.5);
-            }
-        }
+  img {
+    transition: all ease 0.3s;
+    &:hover {
+      transform: scale(1.5);
     }
+  }
+}
+
+.projects-list {
+    margin-top: 32px;
+  &-item {
+    a {
+        text-decoration: none;
+      background-color: #colors[buttonColor];
+      display: block;
+      padding: 16px 20px;
+      margin-bottom: 16px;
+      text-align: center;
+      color: #colors[textColor];
+      font-weight: bold;
+      border-radius: 30px;
+      border: 2px solid #colors[buttonColor];
+      transition: all ease .5s;
+
+      &:hover {
+        color: #colors[buttonColor];
+        background-color: transparent;
+      }
+    }
+  }
 }
